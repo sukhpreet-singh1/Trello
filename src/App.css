@@ -1,0 +1,94 @@
+.app {
+  background-image: linear-gradient(
+    to bottom left,
+    #fda7d6,
+    #d6517f,
+    #a82aaa,
+    #8687f3 70%
+  );
+  height: 100vh;
+  padding: 10px 30px 30px 30px;
+  color: #172b4d;
+}
+
+.todo-list {
+  background: #ebecf0;
+  border-radius: 4px;
+  max-width: 400px;
+  height: auto;
+  padding: 0 15px 10px 15px;
+}
+label {
+  padding-bottom: 3px;
+}
+.heading {
+  margin-top: 0;
+  text-align: center;
+  color: #da97d4;
+  font-weight: bold;
+  font-size: larger;
+}
+.button {
+  padding: 10px;
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #ebecf0;
+  color: #172b4d;
+  border: 0px;
+}
+.todo {
+  padding: 10px 15px 10px 15px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.todobutton {
+  align-content: flex-end;
+}
+.addform {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+}
+.submitbutton {
+  padding: 5px;
+  width: 80px;
+  margin: 5px;
+}
+.input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.editbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+input.error {
+  border: 1px solid #eadae4;
+}
+
+.error {
+  margin-top: -8px;
+  padding-bottom: 8px;
+  color: #db2269;
+  font-size: 0.625em;
+  display: relative;
+}
+
+.headlabel {
+  font-weight: bold;
+}
