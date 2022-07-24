@@ -4,9 +4,9 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 import Modal from "./Modal";
 import Sidebar from "./Sidebar";
-import Person from "./Images/Person.svg";
+import Person from "./Images/Person.png";
 import Search from "./Images/Search.svg";
-import User from "./Images/User.svg";
+import User from "./Images/User.png";
 import Filter from "./Images/Filter.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -95,8 +95,8 @@ function Project() {
       <div className="col-10 ps-5">
       <h3 className="d-flex justify-content-between pt-2 pe-2 pb-2">
         <div className="d-flex flex-row align-items-center"><img alt="x" src={Search} height={20} width={20}/><div className="heading">Search</div></div>
-        <img alt="x" src={Person}/>
-        <div className="d-flex flex-row m-0 align-items-center"><div className="heading">Hi!Sukhpreet </div><img alt="x" src={User}/> </div>
+        <img alt="x" className="pt-2" src={Person} height={30}/>
+        <div className="d-flex flex-row m-0 align-items-center"><div className="heading">Hi!Sukhpreet </div><img alt="x" src={User} height={36} width={36}/> </div>
       </h3>
       <div className="d-flex flex-row justify-content-between align-items-center pt-5"><h4>Projects</h4><div className="pe-4"><img alt="x" src={Filter}/> Filter</div></div>  
       <button className="button" onClick={showModal}>
