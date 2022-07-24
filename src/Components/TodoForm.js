@@ -15,41 +15,42 @@ function TodoForm({ addTodo, handleClose }) {
     setColumn("");
   };
   const handleDescription = (e) => {
-    if (e.target.value.length < 25) {
+    if (e.target.value.length===0) {
       setCheck(!false);
     }
-    if (e.target.value.length >= 25 && /^[a-zA-Z\s]*$/.test(value)) {
-      setCheck(!true);
+    else
+    {
+      setCheck(false);
     }
     setDescription(e.target.value);
   };
 
   return (
     <form className="addform">
-      <label>Title</label>
+      <label className="form-label">Title</label>
       <input
         type="text"
         placeholder="Title"
-        className="input"
+        className="input form-control"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      {value != "" && !/^[a-zA-Z\s]*$/.test(value) && (
+      {value !== "" && !/^[a-zA-Z\s]*$/.test(value) && (
         <div className="error">Title should contain only alphabets</div>
       )}
       <label>Description</label>
       <textarea
         type="text"
         placeholder="Description"
-        className="textarea"
+        className="textarea form-control"
         value={description}
         onChange={handleDescription}
       />
-      {description != "" && description.length < 25 && (
-        <div className="error">Description length must be greater than 25</div>
+      {description !== "" && description.length < 1 && (
+        <div className="error">Description should not be empty</div>
       )}
-      <label>Column</label>
-      <select value={column} onChange={(e) => setColumn(e.target.value)}>
+      <label className="form-label">Column</label>
+      <select value={column} className="form-control" onChange={(e) => setColumn(e.target.value)}>
         <option value="To-do"> To-do </option>
         <option value="Doing"> Doing </option>
         <option value="Done"> Done </option>

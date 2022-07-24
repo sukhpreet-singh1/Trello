@@ -16,11 +16,11 @@ function EditForm({
   const [delcheck, setDelcheck] = useState(false);
   const handleSubmit = (e) => {
     handleClose();
-    if (col != column) {
+    if (col !== column) {
       removeTodo(index, col);
       addTodo(text, description, column);
     }
-    if (todo.text != text || todo.description != description) {
+    if (todo.text !== text || todo.description !== description) {
       updateTodo(text, description, index, col);
     }
     e.preventDefault();
@@ -28,30 +28,31 @@ function EditForm({
 
   const handleDescription = (e) => {
     console.log(e.target.value);
-    if (e.target.value.length < 25) {
+    if (e.target.value.length ===0) {
       setCheck(true);
     }
-    if (e.target.value.length >= 25 && /^[a-zA-Z\s]*$/.test(text)) {
+    else
+    {
       setCheck(false);
     }
     setDescription(e.target.value);
   };
   const handleColumn = (e) => {
-    if (e.target.value != col) {
+    if (e.target.value !== col) {
       setDelcheck(true);
     }
-    if (e.target.value == col) {
+    if (e.target.value === col) {
       setDelcheck(false);
     }
     setColumn(e.target.value);
   };
   return (
     <form className="addform">
-      <label>Title</label>
+      <label className="form-label">Title</label>
       <input
         type="text"
         placeholder="title"
-        className="input"
+        className="input form-control"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
@@ -59,19 +60,19 @@ function EditForm({
         <div className="error">Title should contain only alphabets</div>
       )}
 
-      <label>Description</label>
+      <label className="form-label">Description</label>
       <textarea
         type="text"
         placeholder="description"
-        className="textarea"
+        className="textarea form-control"
         value={description}
         onChange={handleDescription}
       />
       {description.length < 25 && (
         <div className="error">Description length must be greater than 25</div>
       )}
-      <label>Column</label>
-      <select value={column} onChange={handleColumn}>
+      <label className="form-label">Column</label>
+      <select value={column} className="form-control" onChange={handleColumn}>
         <option value="To-do"> To-do </option>
         <option value="Doing"> Doing </option>
         <option value="Done"> Done </option>
